@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Exercise 4</title>
+</head>
+<body>
+<header class="header">
+  <div>
+    <img class="logo" src="/public/Pokemon-Logo.png" alt="Pokemon logo">
+  </div>
+</header>
+<main>
+  <section class="select-form">
+    <div class="select-pokemon">
+      <div class="select-type">
+        <label for="type">Type</label>
+        <select name="type" id="type">
+          <option value="All">All</option>
+          <option value="Normal">Normal</option>
+          <option value="Fire">Fire</option>
+          <option value="Water">Water</option>
+          <option value="Electric">Electric</option>
+          <option value="Grass">Grass</option>
+          <option value="Ice">Ice</option>
+          <option value="Fighting">Fighting</option>
+          <option value="Poison">Poison</option>
+          <option value="Ground">Ground</option>
+          <option value="Flying">Flying</option>
+          <option value="Psychic">Psychic</option>
+          <option value="Bug">Bug</option>
+          <option value="Rock">Rock</option>
+          <option value="Ghost">Ghost</option>
+          <option value="Dragon">Dragon</option>
+          <option value="Dark">Dark</option>
+          <option value="Steel">Steel</option>
+          <option value="Fairy">Fairy</option>
+        </select>
+      </div>
+      <div class="select-captured">
+        <section class="select-pokemon">
+          <div class="select-captured-status">
+            <label for="capture-status">Captured</label>
+            <select name="capture-status" id="capture-status">
+              <option value="any">Any</option>
+              <option value="not-seen">Not Seen</option>
+              <option value="seen">Seen</option>
+              <option value="captured">Captured</option>
+              <option value="shiny-captured">Shiny Captured</option>
+              <option value="evolved">Evolved</option>
+            </select>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  <section class="pokemon-list">
+    <div class="pokemon-card" data-type="Fire">
+      <p class="pokemon-number">1</p>
+      <img class="pokemon-pic" alt="Lizadon Picture" src="/public/Lizadon.png">
+      <p class="pokemon-name">Lizadon</p>
+      <p class="pokemon-type" data-type="Fire">Fire</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">2</p>
+      <img class="pokemon-pic" alt="Pikachu Picture" src="/public/Pikachu.png">
+      <p class="pokemon-name">Pikachu</p>
+      <p class="pokemon-type" data-type="Electric">Electric</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">3</p>
+      <img class="pokemon-pic" alt="Mega Charizard X Picture" src="/public/Mega-Charizard-X.png">
+      <p class="pokemon-name">Mega Charizard X</p>
+      <p class="pokemon-type" data-type="Fire Dragon">Fire/Dragon</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">4</p>
+      <img class="pokemon-pic" alt="Mega kamex Picture" src="/public/Megacamax.png">
+      <p class="pokemon-name">Mega kamex</p>
+      <p class="pokemon-type" data-type="Water">Water</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">5</p>
+      <img class="pokemon-pic" alt="Mega spear Picture" src="/public/Mega-Spear.png">
+      <p class="pokemon-name">Mega spear</p>
+      <p class="pokemon-type" data-type="Flying Poison">Flying/Poison</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">6</p>
+      <img class="pokemon-pic" alt="Rattata (Alolan Form) Picture" src="/public/Rattata-(AlolanForm).png">
+      <p class="pokemon-name">Rattata (Alolan Form)</p>
+      <p class="pokemon-type" data-type="Dark Normal">Dark/Normal</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">7</p>
+      <img class="pokemon-pic" alt="Clefable Picture" src="/public/Clefable.png">
+      <p class="pokemon-name">Clefable</p>
+      <p class="pokemon-type" data-type="Fairy">Fairy</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">8</p>
+      <img class="pokemon-pic" alt="Wigglytuff Picture" src="/public/Wigglytuff.png">
+      <p class="pokemon-name">Wigglytuff</p>
+      <p class="pokemon-type" data-type="Normal Fairy">Normal/Fairy</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">9</p>
+      <img class="pokemon-pic" alt="Diglett (Alolan Form) Picture" src="/public/Diglett-(Alolan-Form).png">
+      <p class="pokemon-name">Diglett (Alolan Form)</p>
+      <p class="pokemon-type" data-type="Ground Steel">Ground/Steel</p>
+      <div class="checkbox-container">
+        <label class="is-captured">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          <span class="slider-label">Captured</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="pokemon-card">
+      <p class="pokemon-number">10</p>
+      <img class="pokemon-pic" alt="Growlithe Picture" src="/public/Growlithe.png">
+      <p class="pokemon-name">Growlithe</p>
+      <p class="pokemon-type" data-type="Fire">Fire</p>
+      <div class="checkbox-container">
+        <div class="ch-box">
+          <label class="is-captured">
+            <input type="checkbox">
+            <span class="slider round"></span>
+            <span class="slider-label">Captured</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <p class="footer">&copy;2025 All Right Reserve. <a href="https://www.instagram.com/tanznp/" target="_blank" class="my-ig">tanzdium</a></p>
+</footer>
+</body>
+</html>
