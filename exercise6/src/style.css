@@ -3,6 +3,10 @@
   --bg-nav-color: #f1f1f1;
   --font-style: 'IBM Plex Sans Thai';
   --font-size: 18px;
+  --font-color: #ffffff;
+  --font-footer-color: #d1d1d1;
+  --font-footer-column-color: #6a6a6a;
+  --black-in-day-color: #000000;
   --menu-1-color: #3e3145;
   --menu-2-color: #b2cbd0;
   --menu-3-color: #433930;
@@ -40,6 +44,11 @@ header {
   gap: 20px;
 }
 
+.logo {
+  width: 50px;
+  height: auto;
+}
+
 .map {
   display: flex;
   align-items: center;
@@ -53,9 +62,14 @@ header {
 
 .map-label {
   font-size: 14px;
-  color: black;
+  color: var(--black-in-day-color);
   text-decoration: none;
   cursor: pointer;
+}
+
+.nav-toggle,
+.hamburger {
+  display: none;
 }
 
 .navbar {
@@ -69,7 +83,7 @@ header {
 }
 
 .nav-cmd a {
-  color: black;
+  color: var(--black-in-day-color);
   text-decoration: none;
   font-weight: 600;
 }
@@ -81,9 +95,9 @@ header {
 .sign-in-btn {
   padding: 6px 12px;
   background-color: #ffffff;
-  border: 1px solid #000000;
+  border: 1px solid var(--black-in-day-color);
   border-radius: 20px;
-  color: black;
+  color: var(--black-in-day-color);
   text-decoration: none;
   transition: transform 0.2s ease;
 }
@@ -98,10 +112,10 @@ header {
 
 .join-btn {
   padding: 6px 12px;
-  background-color: #000000;
-  border: 1px solid #000000;
+  background-color: var(--black-in-day-color);
+  border: 1px solid var(--black-in-day-color);
   border-radius: 20px;
-  color: white;
+  color: var(--font-color);
   text-decoration: none;
   transition: transform 0.2s ease;
 }
@@ -118,12 +132,12 @@ header {
   padding: 40px 20px;
 }
 
-.menu-container {
-  max-width: 1200px;
+.block-menu-container {
+  max-width: 2000px;
   margin: 0 auto;
 }
 
-.menu-one-container {
+.menu-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,7 +149,7 @@ header {
   margin-block-end: 40px;
 }
 
-.menu-one-description {
+.menu-description {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,26 +158,26 @@ header {
   padding: 40px;
 }
 
-.menu-one-description h3 {
+.menu-description h3 {
   font-size: 40px;
   font-weight: 500;
   color: var(--menu-1-text-color);
 }
 
-.menu-one-description p {
+.menu-description p {
   font-size: 16px;
   margin-top: -40px;
   text-align: center;
   color: var(--menu-1-text-color);
 }
 
-.menu-one-img img {
+.menu-img img {
   height: 100%;
   display: block;
 }
 
 .menu-one-btn {
-  color: white;
+  color: var(--menu-1-text-color);
   border: 1px solid #ffffff;
   padding: 10px 16px;
   border-radius: 30px;
@@ -211,12 +225,8 @@ header {
   font-size: 16px;
   margin-top: -40px;
   text-align: center;
+  max-inline-size: 50ch;
   color: var(--menu-2-text-color);
-}
-
-.menu-two-img img {
-  height: 100%;
-  display: block;
 }
 
 .menu-two-btn {
@@ -271,12 +281,9 @@ header {
   margin-top: -40px;
   text-align: center;
   color: var(--menu-3-text-color);
+  max-inline-size: 50ch;
 }
 
-.menu-three-img img {
-  height: 100%;
-  display: block;
-}
 
 .menu-three-btn {
   color: var(--menu-3-text-color);
@@ -312,14 +319,14 @@ header {
 
 .fyi-description p a {
   text-decoration: underline;
-  color: black;
+  color: var(--black-in-day-color);
   cursor: pointer;
 }
 
 .footer-link-page {
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #d1d1d1;
+  border-top: 1px solid var(--font-footer-color);
   gap: 20px;
   padding: 20px 0;
   margin-block-start: 20px;
@@ -334,7 +341,7 @@ header {
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
-  color: black;
+  color: var(--black-in-day-color);
 }
 
 .footer-column ul {
@@ -351,7 +358,7 @@ header {
 
 .footer-column ul a {
   text-decoration: none;
-  color: #6a6a6a;
+  color: var(--font-footer-column-color);
 }
 
 .footer-column ul a:hover {
@@ -363,7 +370,7 @@ header {
   flex-direction: column;
   padding-block-start: 20px;
   margin-block-start: 20px;
-  border-top: 1px solid #d1d1d1;
+  border-top: 1px solid var(--font-footer-color);
   margin-inline-start: 40px;
   margin-inline-end: 40px;
 }
@@ -404,6 +411,6 @@ header {
 
 .credit {
   font-size: 12px;
-  color: #6a6a6a;
+  color: var(--font-footer-column-color);
 }
 

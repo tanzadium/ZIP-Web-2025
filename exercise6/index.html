@@ -7,13 +7,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/style-responsive.css" />
     <title>Exercise 6</title>
   </head>
   <body>
     <header>
-      <nav class="navbar-container">
+      <nav class="navbar-container" id="navbar">
         <div class="nav-left">
-          <img src="/public/logo.png" alt="logo" width="35" height="auto">
+          <img src="/public/logo.png" alt="logo" class="logo" width="50" height="auto">
           <div class="navbar">
             <div class="nav-cmd">
               <a href="#menu" class="menu-nav">MENU</a>
@@ -31,20 +32,25 @@
             <a href="/pages/login.html" class="sign-in-btn">Sign in</a>
             <a href="/pages/register.html" class="join-btn">Join now</a>
           </div>
+          <button class="hamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M0 96C0 78.3 14.3 64 32 64h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z"/>
+            </svg>
+          </button>
         </div>
       </nav>
     </header>
     <main>
       <section class="menu">
-        <div class="menu-container">
+        <div class="block-menu-container">
             <div class="menu-one">
-              <div class="menu-one-container">
-                <div class="menu-one-description">
+              <div class="menu-container">
+                <div class="menu-description">
                   <h3>The Spring Edit</h3>
                   <p>Fresh flavors, familiar joy.</p>
                   <a href="#" class="menu-one-btn">View the menu</a>
                 </div>
-                <div class="menu-one-img">
+                <div class="menu-img">
                   <img src="/public/image_1.png" alt="Menu 1" width="600" height="auto">
                 </div>
               </div>
@@ -52,7 +58,7 @@
 
           <div class="menu-two">
             <div class="menu-two-container">
-              <div class="menu-one-img">
+              <div class="menu-img">
                 <img src="/public/image_2.png" alt="Menu 1" width="600" height="auto">
               </div>
               <div class="menu-two-description">
@@ -68,9 +74,9 @@
               <div class="menu-three-description">
                 <h3>Nondairy milk, no extra charge</h3>
                 <p>Customize your drink with your favorite nondairy milk—like soy, coconut, almond or oat—for no additional charge.</p>
-                <a href="#" class="menu-three-btn">View the menu</a>
+                <a href="#" class="menu-three-btn">Order now</a>
               </div>
-              <div class="menu-three-img">
+              <div class="menu-img">
                 <img src="/public/image_3.png" alt="Menu 1" width="600" height="auto">
               </div>
             </div>
@@ -97,8 +103,8 @@
       <div class="footer-container">
         <div class="footer-link-page">
           <div class="footer-column">
-            <p href="#" class="footer-title">About us</p>
-            <ul>
+            <p class="footer-title">About us</p>
+            <ul class="footer-column-list">
               <li><a href="#">Our Company</a></li>
               <li><a href="#">Our Coffee</a></li>
               <li><a href="#">About AAA</a></li>
@@ -110,8 +116,8 @@
           </div>
 
           <div class="footer-column">
-            <p href="#" class="footer-title">Careers</p>
-            <ul>
+            <p class="footer-title">Careers</p>
+            <ul class="footer-column-list">
               <li><a href="#">Culture and Values</a></li>
               <li><a href="#">Belonging at AAA</a></li>
               <li><a href="#">College Achievement Plan</a></li>
@@ -122,8 +128,8 @@
           </div>
 
           <div class="footer-column">
-            <p href="#" class="footer-title">Social Impact</p>
-            <ul>
+            <p class="footer-title">Social Impact</p>
+            <ul class="footer-column-list">
               <li><a href="#">Communities</a></li>
               <li><a href="#">AAA Foundation</a></li>
               <li><a href="#">Sustainability</a></li>
@@ -132,8 +138,8 @@
           </div>
 
           <div class="footer-column">
-            <p href="#" class="footer-title">For Business Partner</p>
-            <ul>
+            <p class="footer-title">For Business Partner</p>
+            <ul class="footer-column-list">
               <li><a href="#">Landlord Support Centre</a></li>
               <li><a href="#">Suppliers</a></li>
               <li><a href="#">Corporate Gift Card Sales</a></li>
@@ -142,8 +148,8 @@
           </div>
 
           <div class="footer-column">
-            <p href="#" class="footer-title">Order and Pick Up</p>
-            <ul>
+            <p class="footer-title">Order and Pick Up</p>
+            <ul class="footer-column-list">
               <li><a href="#">Order on the App</a></li>
               <li><a href="#">Order on the Web</a></li>
               <li><a href="#">Delivery</a></li>
