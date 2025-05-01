@@ -67,6 +67,21 @@
     .footer-column-list {
         display: none;
     }
+
+    .footer-column {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-inline-end: 30px;
+    }
+
+    .dropdown {
+        display: block;
+        width: 14px;
+        height: auto;
+        border: none;
+    }
 }
 
 @media (max-width: 1194px) {

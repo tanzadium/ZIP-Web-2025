@@ -414,3 +414,34 @@ header {
   color: var(--font-footer-column-color);
 }
 
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#scrollToTopBtn:hover::after {
+  content: 'Scroll to top';
+  position: absolute;
+  bottom: 110%;
+  right: 50%;
+  transform: translateX(50%);
+  background: var(--black-in-day-color);
+  color: var(--font-color);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.dropdown {
+  display: none;
+}
+
