@@ -54,7 +54,15 @@ header {
   align-items: center;
   gap: 10px;
   margin-inline-end: 5px;
+  margin-block-start: 5px;
 }
+
+.map:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+  content: 'Open in Google Maps';
+}
+
 .map-svg {
   width: 20px;
   height: auto;
@@ -444,4 +452,3 @@ header {
 .dropdown {
   display: none;
 }
-
