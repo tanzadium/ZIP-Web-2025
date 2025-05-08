@@ -1,136 +1,102 @@
-let A = 0;
-let B = null;
-let operator = null;
-let justCalculated = false;
+const displayBox = document.querySelector('.display-box');
+const displayInput = document.querySelector('#input');
+const displayOutput = document.querySelector('#output');
+const btns = document.querySelectorAll("button");
+const operators = ['×', '÷', '%', '+', '-'];
 
-const inputDisplay = document.querySelector("#input");
-const outputDisplay = document.querySelector("#output");
+let input = "";
+let output = "";
+let lastCalculatedValue = false;
 
-function clearAll() {
-    A = null;
-    B = null;
-    operator = null;
-    inputDisplay.textContent = "";
-    outputDisplay.textContent = "0";
-}
+displayOutput.textContent = '0';
 
-function updateInputDisplay() {
-    inputDisplay.textContent = `${A !== null ? A : ""} ${operator !== null ? operator : ""} ${B !== null ? B : ""}`;
-}
+const calculate = btnValue => {
 
-function evaluate() {
-    const numA = parseFloat(A);
-    const numB = parseFloat(B);
-    let result = null;
+    const lastChar = input[input.length - 1];
+    const isLastOperator = operators.includes(lastChar);
 
-    switch (operator) {
-        case "+":
-            result = numA + numB;
-            break;
-        case "-":
-            result = numA - numB;
-            break;
-        case "×":
-            result = numA * numB;
-            break;
-        case "÷":
-            if (numB === 0) {
-                result = "Error";
-            } else {
-                result = numA / numB;
+    if (btnValue === 'C') {
+        clearDisplay();
+        lastCalculatedValue = false;
+    } else if (btnValue === '+/-') {
+        if (!isNaN(input)) {
+            input = (parseFloat(input) * -1).toString();
+        }
+    } else if (btnValue === '%') {
+        const percent = parseFloat(input) / 100;
+        input = percent.toString();
+    } else if (btnValue === '.') {
+        if (lastCalculatedValue) {
+            clearDisplay();
+            input = '0.';
+            output = '';
+        } else if (input === '') {
+            input = input + '0.';
+        } else {
+            const lastNumber = input.split(/[\+\-\*\/]/).pop();
+            if (!lastNumber.includes('.')) {
+                input = input + '.';
             }
-            break;
+        }
+    } else if (btnValue === '=') {
+        if (input === "" ||
+            lastChar === "." ||
+            isLastOperator && lastChar !== "%" ||
+            lastCalculatedValue
+        ) return;
+
+        const formattedOperators = input
+            .replace(/×/g, '*')
+            .replace(/÷/g, '/');
+        try {
+            const calculatedValue = new Function(`return ${formattedOperators};`)();
+            output = parseFloat(calculatedValue);
+            lastCalculatedValue = true;
+        } catch (error) {
+            output = 'Error';
+        }
+    } else if (operators.includes(btnValue)) {
+        if (lastCalculatedValue) {
+            input = output + btnValue;
+            output = '';
+            lastCalculatedValue = false;
+        } else if ((input === '' && (btnValue === '×' || btnValue === '÷' || btnValue === '%' || btnValue === '+'))) {
+            return;
+        } else if (operators.includes(input.slice(-1)) && operators.includes(btnValue)) {
+            if (lastChar === '%') {
+                input = input + btnValue;
+            } else {
+                input = input.slice(0, -1) + btnValue; // delete last operator and insert new operator
+            }
+        } else {
+            input += btnValue;
+        }
+    } else {
+        if (lastCalculatedValue) {
+            clearDisplay();
+            output = '';
+        }
+        output = '';
+        input = input + btnValue;
     }
 
-    outputDisplay.textContent = result;
-    A = result;
-    B = null;
-    operator = null;
-    justCalculated = true;
+    // update display
+    // use textContent when u use div
+    // use value when u use input
+    displayInput.textContent = input;
+    console.log(input);
+    displayOutput.textContent = output;
+    console.log(output);
+    displayInput.scrollLeft = displayInput.scrollWidth;
+    displayOutput.scrollLeft = displayOutput.scrollWidth;
 }
 
-document.querySelectorAll("button").forEach(button => {
-    const value = button.textContent;
+function clearDisplay() {
+    input = '';
+    output = '0';
+    lastCalculatedValue = false;
+}
 
-    button.addEventListener("click", () => {
-        if (value === "C") {
-            clearAll();
-            return;
-        }
-
-        if (value === "+/-") {
-            if (operator === null && A !== null) {
-                A = (parseFloat(A) * -1).toString();
-                outputDisplay.textContent = A;
-            } else if (operator !== null && B !== null) {
-                B = (parseFloat(B) * -1).toString();
-                outputDisplay.textContent = B;
-            }
-            updateInputDisplay();
-            return;
-        }
-
-        if (value === "%") {
-            if (operator === null && A !== null) {
-                A = (parseFloat(A) / 100).toString();
-                outputDisplay.textContent = A;
-            } else if (operator !== null && B !== null) {
-                B = (parseFloat(B) / 100).toString();
-                outputDisplay.textContent = B;
-            }
-            updateInputDisplay();
-            return;
-        }
-
-        if (["+", "-", "×", "÷"].includes(value)) {
-            if (A === null) {
-                A = "0";
-            }
-            if (B !== null) {
-                evaluate();
-            }
-            operator = value;
-            justCalculated = false;
-            updateInputDisplay();
-            return;
-        }
-
-        if (value === "=") {
-            if (A !== null && B !== null && operator !== null) {
-                evaluate();
-                updateInputDisplay();
-            }
-            return;
-        }
-
-        if (justCalculated && operator === null) {
-            A = null;
-            outputDisplay.textContent = "0";
-            justCalculated = false;
-        }
-
-        if (operator === null) {
-            if (A === null || A === "0") {
-                A = value === "." ? "0." : value;
-            } else if (value === "." && A.includes(".")) {
-                return;
-            } else {
-                A += value;
-            }
-            outputDisplay.textContent = A;
-        } else {
-            if (B === null || B === "0") {
-                B = value === "." ? "0." : value;
-            } else if (value === "." && B.includes(".")) {
-                return;
-            } else {
-                B += value;
-            }
-            outputDisplay.textContent = B;
-        }
-
-        updateInputDisplay();
-    });
-});
-
-clearAll();
+btns.forEach(btn => {
+    btn.addEventListener('click', e => calculate(e.target.textContent));
+})

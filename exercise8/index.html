@@ -11,15 +11,15 @@
 </head>
 <body class="bg-gray-700 mt-10">
   <div class="display-container flex flex-col justify-center max-w-[380px] m-auto items-center bg-black rounded-4xl font-title-style">
-    <div id="display" class="display flex flex-col justify-center min-w-[300px] min-h-[140px] bg-white text-black p-4 rounded-xl mt-8 gap-2">
-      <div id="input" class="input text-4xl font-light text-right text-gray-500"></div>
-      <div id="output" class="output text-6xl font-semibold text-right"></div>
+    <div id="display" class="display-box flex flex-col justify-center w-[300px] min-h-[140px] bg-white text-black p-4 rounded-xl mt-8 gap-2">
+      <div id="input" class="display-input text-4xl font-light text-right text-gray-500 overflow-scroll"></div>
+      <div id="output" class="output text-6xl font-semibold text-right overflow-scroll"></div>
     </div>
     <div class="grid grid-cols-4 gap-4 text-white text-4xl p-4 mt-5 mb-5 items-center">
-      <button class="bg-red-500 rounded-xl p-2 hover:bg-red-700 hover:scale-95">C</button>
-      <button class="bg-gray-500 rounded-xl p-2 hover:bg-gray-700 hover:text-white hover:scale-95">+/-</button>
-      <button class="bg-gray-500 rounded-xl p-2 hover:bg-gray-700 hover:text-white hover:scale-95">%</button>
-      <button class="bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">÷</button>
+      <button class="operator bg-red-500 rounded-xl p-2 hover:bg-red-700 hover:scale-95">C</button>
+      <button class="operator bg-gray-500 rounded-xl p-2 hover:bg-gray-700 hover:text-white hover:scale-95">+/-</button>
+      <button class="operator bg-gray-500 rounded-xl p-2 hover:bg-gray-700 hover:text-white hover:scale-95">%</button>
+      <button class="operator bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">÷</button>
 
       <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">7</button>
       <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">8</button>
@@ -38,7 +38,7 @@
 
       <button class="col-span-2 bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">0</button>
       <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">.</button>
-      <button class="bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">=</button>
+      <button class="operator bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">=</button>
     </div>
   </div>
 <script type="module" src="/src/main.js"></script>
