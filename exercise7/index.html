@@ -47,7 +47,7 @@
     </nav>
   </header>
   <main>
-    <section class="hero ">
+    <section class="hero">
       <div class="flex flex-col md:flex-row justify-center items-center gap-8 px-6 md:px-12 my-8 text-center md:text-left">
         <h1 class="font-semibold text-6xl sm:text-7xl md:text-[120px] lg:text-[176px] leading-tight md:leading-none pt-6 md:pt-0">
           Effortless
@@ -518,10 +518,10 @@
   </footer>
 
   <script>
-    const hamburgerBtn = document.getElementById('hamburger-menu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const iconHamburger = document.getElementById('icon-hamburger');
-    const iconClose = document.getElementById('icon-close');
+    const hamburgerBtn = document.querySelector('#hamburger-menu');
+    const mobileMenu = document.querySelector('#mobileMenu');
+    const iconHamburger = document.querySelector('#icon-hamburger');
+    const iconClose = document.querySelector('#icon-close');
 
     hamburgerBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');

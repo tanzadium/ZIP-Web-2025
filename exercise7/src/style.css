@@ -9,6 +9,7 @@
     --font-title-style: 'Outfit', 'sans-serif';
     --font-dec-style: 'Petit Formal Script', 'cursive';
     --font-des-color: #6a6a6a;
+    --bg-test-color: #ff0000;
 }
 
 .text-hover:hover {

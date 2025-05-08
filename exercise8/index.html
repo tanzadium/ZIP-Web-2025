@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+  <title>Exercise 8</title>
+</head>
+<body class="bg-gray-700 mt-10">
+  <div class="display-container flex flex-col justify-center max-w-[380px] m-auto items-center bg-black rounded-4xl font-title-style">
+    <div id="display" class="display flex flex-col justify-center min-w-[300px] min-h-[140px] bg-white text-black p-4 rounded-xl mt-8 gap-2">
+      <div id="input" class="input text-4xl font-light text-right text-gray-500"></div>
+      <div id="output" class="output text-6xl font-semibold text-right"></div>
+    </div>
+    <div class="grid grid-cols-4 gap-4 text-white text-4xl p-4 mt-5 mb-5 items-center">
+      <button class="bg-red-500 rounded-xl p-2 hover:bg-red-700 hover:scale-95">C</button>
+      <button class="bg-gray-500 rounded-xl p-2 hover:bg-gray-700 hover:text-white hover:scale-95">+/-</button>
+      <button class="bg-gray-500 rounded-xl p-2 hover:bg-gray-700 hover:text-white hover:scale-95">%</button>
+      <button class="bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">÷</button>
+
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">7</button>
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">8</button>
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">9</button>
+      <button class="bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">×</button>
+
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">4</button>
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">5</button>
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">6</button>
+      <button class="bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">-</button>
+
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">1</button>
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">2</button>
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">3</button>
+      <button class="bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">+</button>
+
+      <button class="col-span-2 bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">0</button>
+      <button class="bg-gray-300 rounded-xl p-2 text-black hover:bg-gray-700 hover:text-white hover:scale-95">.</button>
+      <button class="bg-orange-400 rounded-xl p-2 hover:bg-orange-700 hover:scale-95">=</button>
+    </div>
+  </div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
